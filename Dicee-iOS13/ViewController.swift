@@ -19,11 +19,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var diceImageView1: UIImageView!
     @IBOutlet weak var diceImageView2: UIImageView!
     
+    var leftDiceNumber = 1
+    var rightDiceNumber = 5
     
     // triggered when the app first shows up on the device
+    // not being used in this application
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     
     // triggered if the Roll button gets pressed
@@ -36,12 +38,28 @@ class ViewController: UIViewController {
             // set the new value
         
         // changing the image
-        diceImageView1.image = #imageLiteral(resourceName: "DiceSix") // image literal
-        
-        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
+//        diceImageView1.image = #imageLiteral(resourceName: "DiceSix") // image literal
+//
+//        diceImageView2.image = #imageLiteral(resourceName: "DiceTwo")
         
 //        // changing the alpha (transparency) of the image
 //        diceImageView1.alpha = 0.5
+        
+        // create an array of all the dice sides
+        //                      [ collection of items ][ item wanted ]
+        
+        let diceArray = [#imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"), #imageLiteral(resourceName: "DiceFour"), #imageLiteral(resourceName: "DiceFive"), #imageLiteral(resourceName: "DiceSix")]
+        
+        // Generate a random number
+        // closed range -> (in: lower...upper)
+        // half open range -> (in: lower..< upper) ---- does not include the upper
+        
+//        let randLeftDice = Int.random(in: 0...5)
+//        let randRightDice = Int.random(in: 0...5)
+        
+        // randomElement() -> gets a random item from a collection
+        diceImageView1.image = diceArray.randomElement()
+        diceImageView2.image = diceArray.randomElement()
         
     }
     
