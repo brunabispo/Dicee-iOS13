@@ -529,6 +529,7 @@ class ViewController: UIViewController {
         else if diceImage4.image == #imageLiteral(resourceName: "DiceSix") || diceImage4.image == #imageLiteral(resourceName: "dice_yellow_06") || diceImage4.image == #imageLiteral(resourceName: "dice6") || diceImage4.image == #imageLiteral(resourceName: "diceBlue6") {
             lblN4.text = "6"
         }
+        
     }
     
     func changeDice(array: [UIImage]) {
